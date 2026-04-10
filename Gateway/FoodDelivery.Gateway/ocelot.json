@@ -1,0 +1,96 @@
+{
+  "Routes": [
+    {"SwaggerKey":"auth","UpstreamPathTemplate":"/gateway/auth/register","UpstreamHttpMethod":["POST"],"DownstreamPathTemplate":"/api/auth/register","DownstreamScheme":"http","DownstreamHostAndPorts":[{"Host":"localhost","Port":5001}]},
+    {"SwaggerKey":"auth","UpstreamPathTemplate":"/gateway/auth/login","UpstreamHttpMethod":["POST"],"DownstreamPathTemplate":"/api/auth/login","DownstreamScheme":"http","DownstreamHostAndPorts":[{"Host":"localhost","Port":5001}]},
+    {"SwaggerKey":"auth","UpstreamPathTemplate":"/gateway/auth/verify-otp","UpstreamHttpMethod":["POST"],"DownstreamPathTemplate":"/api/auth/verify-otp","DownstreamScheme":"http","DownstreamHostAndPorts":[{"Host":"localhost","Port":5001}]},
+    {"SwaggerKey":"auth","UpstreamPathTemplate":"/gateway/auth/refresh","UpstreamHttpMethod":["POST"],"DownstreamPathTemplate":"/api/auth/refresh","DownstreamScheme":"http","DownstreamHostAndPorts":[{"Host":"localhost","Port":5001}]},
+    {"SwaggerKey":"auth","UpstreamPathTemplate":"/gateway/auth/send-otp","UpstreamHttpMethod":["POST"],"DownstreamPathTemplate":"/api/auth/send-otp","DownstreamScheme":"http","DownstreamHostAndPorts":[{"Host":"localhost","Port":5001}]},
+    {"SwaggerKey":"auth","UpstreamPathTemplate":"/gateway/auth/verify-email","UpstreamHttpMethod":["POST"],"DownstreamPathTemplate":"/api/auth/verify-email","DownstreamScheme":"http","DownstreamHostAndPorts":[{"Host":"localhost","Port":5001}]},
+    {"SwaggerKey":"auth","UpstreamPathTemplate":"/gateway/auth/toggle-2fa","UpstreamHttpMethod":["POST"],"DownstreamPathTemplate":"/api/auth/toggle-2fa","DownstreamScheme":"http","DownstreamHostAndPorts":[{"Host":"localhost","Port":5001}],"AuthenticationOptions":{"AuthenticationProviderKey":"Bearer","AllowedScopes":[]}},
+    {"SwaggerKey":"auth","UpstreamPathTemplate":"/gateway/auth/resend-otp","UpstreamHttpMethod":["POST"],"DownstreamPathTemplate":"/api/auth/resend-otp","DownstreamScheme":"http","DownstreamHostAndPorts":[{"Host":"localhost","Port":5001}]},
+    {"SwaggerKey":"catalog","UpstreamPathTemplate":"/gateway/catalog/restaurants","UpstreamHttpMethod":["GET"],"DownstreamPathTemplate":"/api/catalog/restaurants","DownstreamScheme":"http","DownstreamHostAndPorts":[{"Host":"localhost","Port":5002}]},
+    {"SwaggerKey":"catalog","UpstreamPathTemplate":"/gateway/catalog/restaurants","UpstreamHttpMethod":["POST"],"DownstreamPathTemplate":"/api/catalog/restaurants","DownstreamScheme":"http","DownstreamHostAndPorts":[{"Host":"localhost","Port":5002}],"AuthenticationOptions":{"AuthenticationProviderKey":"Bearer","AllowedScopes":[]}},
+    {"SwaggerKey":"catalog","UpstreamPathTemplate":"/gateway/catalog/restaurants/{id}","UpstreamHttpMethod":["GET"],"DownstreamPathTemplate":"/api/catalog/restaurants/{id}","DownstreamScheme":"http","DownstreamHostAndPorts":[{"Host":"localhost","Port":5002}]},
+    {"SwaggerKey":"catalog","UpstreamPathTemplate":"/gateway/catalog/restaurants/{id}","UpstreamHttpMethod":["PUT"],"DownstreamPathTemplate":"/api/catalog/restaurants/{id}","DownstreamScheme":"http","DownstreamHostAndPorts":[{"Host":"localhost","Port":5002}],"AuthenticationOptions":{"AuthenticationProviderKey":"Bearer","AllowedScopes":[]}},
+    {"SwaggerKey":"catalog","UpstreamPathTemplate":"/gateway/catalog/restaurants/{id}/toggle-open","UpstreamHttpMethod":["PATCH"],"DownstreamPathTemplate":"/api/catalog/restaurants/{id}/toggle-open","DownstreamScheme":"http","DownstreamHostAndPorts":[{"Host":"localhost","Port":5002}],"AuthenticationOptions":{"AuthenticationProviderKey":"Bearer","AllowedScopes":[]}},
+    {"SwaggerKey":"catalog","UpstreamPathTemplate":"/gateway/catalog/restaurants/{id}/approve","UpstreamHttpMethod":["PATCH"],"DownstreamPathTemplate":"/api/catalog/restaurants/{id}/approve","DownstreamScheme":"http","DownstreamHostAndPorts":[{"Host":"localhost","Port":5002}],"AuthenticationOptions":{"AuthenticationProviderKey":"Bearer","AllowedScopes":[]}},
+    {"SwaggerKey":"catalog","UpstreamPathTemplate":"/gateway/catalog/restaurants/admin/all","UpstreamHttpMethod":["GET"],"DownstreamPathTemplate":"/api/catalog/restaurants/admin/all","DownstreamScheme":"http","DownstreamHostAndPorts":[{"Host":"localhost","Port":5002}],"AuthenticationOptions":{"AuthenticationProviderKey":"Bearer","AllowedScopes":[]}},
+    {"SwaggerKey":"catalog","UpstreamPathTemplate":"/gateway/catalog/menu-items","UpstreamHttpMethod":["POST"],"DownstreamPathTemplate":"/api/catalog/menu-items","DownstreamScheme":"http","DownstreamHostAndPorts":[{"Host":"localhost","Port":5002}],"AuthenticationOptions":{"AuthenticationProviderKey":"Bearer","AllowedScopes":[]}},
+    {"SwaggerKey":"catalog","UpstreamPathTemplate":"/gateway/catalog/menu-items","UpstreamHttpMethod":["GET"],"DownstreamPathTemplate":"/api/catalog/menu-items","DownstreamScheme":"http","DownstreamHostAndPorts":[{"Host":"localhost","Port":5002}]},
+    {"SwaggerKey":"catalog","UpstreamPathTemplate":"/gateway/catalog/menu-items/{id}","UpstreamHttpMethod":["GET"],"DownstreamPathTemplate":"/api/catalog/menu-items/{id}","DownstreamScheme":"http","DownstreamHostAndPorts":[{"Host":"localhost","Port":5002}]},
+    {"SwaggerKey":"catalog","UpstreamPathTemplate":"/gateway/catalog/menu-items/{id}","UpstreamHttpMethod":["PUT","DELETE"],"DownstreamPathTemplate":"/api/catalog/menu-items/{id}","DownstreamScheme":"http","DownstreamHostAndPorts":[{"Host":"localhost","Port":5002}],"AuthenticationOptions":{"AuthenticationProviderKey":"Bearer","AllowedScopes":[]}},
+    {"SwaggerKey":"catalog","UpstreamPathTemplate":"/gateway/catalog/menu-items/{id}/toggle-availability","UpstreamHttpMethod":["PATCH"],"DownstreamPathTemplate":"/api/catalog/menu-items/{id}/toggle-availability","DownstreamScheme":"http","DownstreamHostAndPorts":[{"Host":"localhost","Port":5002}],"AuthenticationOptions":{"AuthenticationProviderKey":"Bearer","AllowedScopes":[]}},
+    {"SwaggerKey":"orders","UpstreamPathTemplate":"/gateway/orders/cart","UpstreamHttpMethod":["GET","DELETE"],"DownstreamPathTemplate":"/api/orders/cart","DownstreamScheme":"http","DownstreamHostAndPorts":[{"Host":"localhost","Port":5003}],"AuthenticationOptions":{"AuthenticationProviderKey":"Bearer","AllowedScopes":[]}},
+    {"SwaggerKey":"orders","UpstreamPathTemplate":"/gateway/orders/cart/items","UpstreamHttpMethod":["POST"],"DownstreamPathTemplate":"/api/orders/cart/items","DownstreamScheme":"http","DownstreamHostAndPorts":[{"Host":"localhost","Port":5003}],"AuthenticationOptions":{"AuthenticationProviderKey":"Bearer","AllowedScopes":[]}},
+    {"SwaggerKey":"orders","UpstreamPathTemplate":"/gateway/orders/cart/items/{cartItemId}","UpstreamHttpMethod":["PUT","DELETE"],"DownstreamPathTemplate":"/api/orders/cart/items/{cartItemId}","DownstreamScheme":"http","DownstreamHostAndPorts":[{"Host":"localhost","Port":5003}],"AuthenticationOptions":{"AuthenticationProviderKey":"Bearer","AllowedScopes":[]}},
+    {"SwaggerKey":"orders","UpstreamPathTemplate":"/gateway/orders/cart/apply-coupon","UpstreamHttpMethod":["POST"],"DownstreamPathTemplate":"/api/orders/cart/apply-coupon","DownstreamScheme":"http","DownstreamHostAndPorts":[{"Host":"localhost","Port":5003}],"AuthenticationOptions":{"AuthenticationProviderKey":"Bearer","AllowedScopes":[]}},
+    {"SwaggerKey":"orders","UpstreamPathTemplate":"/gateway/orders/cart/checkout-context","UpstreamHttpMethod":["GET"],"DownstreamPathTemplate":"/api/orders/cart/checkout-context","DownstreamScheme":"http","DownstreamHostAndPorts":[{"Host":"localhost","Port":5003}],"AuthenticationOptions":{"AuthenticationProviderKey":"Bearer","AllowedScopes":[]}},
+    {"SwaggerKey":"orders","UpstreamPathTemplate":"/gateway/orders/orders","UpstreamHttpMethod":["POST","GET"],"DownstreamPathTemplate":"/api/orders","DownstreamScheme":"http","DownstreamHostAndPorts":[{"Host":"localhost","Port":5003}],"AuthenticationOptions":{"AuthenticationProviderKey":"Bearer","AllowedScopes":[]}},
+    {"SwaggerKey":"orders","UpstreamPathTemplate":"/gateway/orders/orders/my","UpstreamHttpMethod":["GET"],"DownstreamPathTemplate":"/api/orders/my","DownstreamScheme":"http","DownstreamHostAndPorts":[{"Host":"localhost","Port":5003}],"AuthenticationOptions":{"AuthenticationProviderKey":"Bearer","AllowedScopes":[]}},
+    {"SwaggerKey":"orders","UpstreamPathTemplate":"/gateway/orders/orders/{id}","UpstreamHttpMethod":["GET"],"DownstreamPathTemplate":"/api/orders/{id}","DownstreamScheme":"http","DownstreamHostAndPorts":[{"Host":"localhost","Port":5003}],"AuthenticationOptions":{"AuthenticationProviderKey":"Bearer","AllowedScopes":[]}},
+    {"SwaggerKey":"orders","UpstreamPathTemplate":"/gateway/orders/orders/{id}/status","UpstreamHttpMethod":["PUT"],"DownstreamPathTemplate":"/api/orders/{id}/status","DownstreamScheme":"http","DownstreamHostAndPorts":[{"Host":"localhost","Port":5003}],"AuthenticationOptions":{"AuthenticationProviderKey":"Bearer","AllowedScopes":[]}},
+    {"SwaggerKey":"orders","UpstreamPathTemplate":"/gateway/orders/orders/restaurant/{restaurantId}","UpstreamHttpMethod":["GET"],"DownstreamPathTemplate":"/api/orders/restaurant/{restaurantId}","DownstreamScheme":"http","DownstreamHostAndPorts":[{"Host":"localhost","Port":5003}],"AuthenticationOptions":{"AuthenticationProviderKey":"Bearer","AllowedScopes":[]}},
+    {"SwaggerKey":"orders","UpstreamPathTemplate":"/gateway/orders/payments/simulate","UpstreamHttpMethod":["POST"],"DownstreamPathTemplate":"/api/orders/payments/simulate","DownstreamScheme":"http","DownstreamHostAndPorts":[{"Host":"localhost","Port":5003}],"AuthenticationOptions":{"AuthenticationProviderKey":"Bearer","AllowedScopes":[]}},
+    {"SwaggerKey":"orders","UpstreamPathTemplate":"/gateway/orders/payments/order/{orderId}","UpstreamHttpMethod":["GET"],"DownstreamPathTemplate":"/api/orders/payments/order/{orderId}","DownstreamScheme":"http","DownstreamHostAndPorts":[{"Host":"localhost","Port":5003}],"AuthenticationOptions":{"AuthenticationProviderKey":"Bearer","AllowedScopes":[]}},
+    {"SwaggerKey":"orders","UpstreamPathTemplate":"/gateway/deliveries/assign","UpstreamHttpMethod":["POST"],"DownstreamPathTemplate":"/api/deliveries/assign","DownstreamScheme":"http","DownstreamHostAndPorts":[{"Host":"localhost","Port":5003}],"AuthenticationOptions":{"AuthenticationProviderKey":"Bearer","AllowedScopes":[]}},
+    {"SwaggerKey":"orders","UpstreamPathTemplate":"/gateway/deliveries/pending","UpstreamHttpMethod":["GET"],"DownstreamPathTemplate":"/api/deliveries/pending","DownstreamScheme":"http","DownstreamHostAndPorts":[{"Host":"localhost","Port":5003}],"AuthenticationOptions":{"AuthenticationProviderKey":"Bearer","AllowedScopes":[]}},
+    {"SwaggerKey":"orders","UpstreamPathTemplate":"/gateway/deliveries/my","UpstreamHttpMethod":["GET"],"DownstreamPathTemplate":"/api/deliveries/my","DownstreamScheme":"http","DownstreamHostAndPorts":[{"Host":"localhost","Port":5003}],"AuthenticationOptions":{"AuthenticationProviderKey":"Bearer","AllowedScopes":[]}},
+    {"SwaggerKey":"orders","UpstreamPathTemplate":"/gateway/deliveries/track/{orderId}","UpstreamHttpMethod":["GET"],"DownstreamPathTemplate":"/api/deliveries/track/{orderId}","DownstreamScheme":"http","DownstreamHostAndPorts":[{"Host":"localhost","Port":5003}],"AuthenticationOptions":{"AuthenticationProviderKey":"Bearer","AllowedScopes":[]}},
+    {"SwaggerKey":"orders","UpstreamPathTemplate":"/gateway/deliveries/{id}","UpstreamHttpMethod":["GET"],"DownstreamPathTemplate":"/api/deliveries/{id}","DownstreamScheme":"http","DownstreamHostAndPorts":[{"Host":"localhost","Port":5003}],"AuthenticationOptions":{"AuthenticationProviderKey":"Bearer","AllowedScopes":[]}},
+    {"SwaggerKey":"orders","UpstreamPathTemplate":"/gateway/deliveries/{id}/status","UpstreamHttpMethod":["PUT"],"DownstreamPathTemplate":"/api/deliveries/{id}/status","DownstreamScheme":"http","DownstreamHostAndPorts":[{"Host":"localhost","Port":5003}],"AuthenticationOptions":{"AuthenticationProviderKey":"Bearer","AllowedScopes":[]}},
+    {"SwaggerKey":"admin","UpstreamPathTemplate":"/gateway/admin/dashboard","UpstreamHttpMethod":["GET"],"DownstreamPathTemplate":"/api/admin/dashboard","DownstreamScheme":"http","DownstreamHostAndPorts":[{"Host":"localhost","Port":5005}],"AuthenticationOptions":{"AuthenticationProviderKey":"Bearer","AllowedScopes":[]}},
+    {"SwaggerKey":"admin","UpstreamPathTemplate":"/gateway/admin/users","UpstreamHttpMethod":["GET"],"DownstreamPathTemplate":"/api/admin/users","DownstreamScheme":"http","DownstreamHostAndPorts":[{"Host":"localhost","Port":5005}],"AuthenticationOptions":{"AuthenticationProviderKey":"Bearer","AllowedScopes":[]}},
+    {"SwaggerKey":"admin","UpstreamPathTemplate":"/gateway/admin/users/{id}","UpstreamHttpMethod":["GET"],"DownstreamPathTemplate":"/api/admin/users/{id}","DownstreamScheme":"http","DownstreamHostAndPorts":[{"Host":"localhost","Port":5005}],"AuthenticationOptions":{"AuthenticationProviderKey":"Bearer","AllowedScopes":[]}},
+    {"SwaggerKey":"admin","UpstreamPathTemplate":"/gateway/admin/users/{id}/status","UpstreamHttpMethod":["PATCH"],"DownstreamPathTemplate":"/api/admin/users/{id}/status","DownstreamScheme":"http","DownstreamHostAndPorts":[{"Host":"localhost","Port":5005}],"AuthenticationOptions":{"AuthenticationProviderKey":"Bearer","AllowedScopes":[]}},
+    {"SwaggerKey":"admin","UpstreamPathTemplate":"/gateway/admin/orders","UpstreamHttpMethod":["GET"],"DownstreamPathTemplate":"/api/admin/orders","DownstreamScheme":"http","DownstreamHostAndPorts":[{"Host":"localhost","Port":5005}],"AuthenticationOptions":{"AuthenticationProviderKey":"Bearer","AllowedScopes":[]}},
+    {"SwaggerKey":"admin","UpstreamPathTemplate":"/gateway/admin/orders/{id}","UpstreamHttpMethod":["GET"],"DownstreamPathTemplate":"/api/admin/orders/{id}","DownstreamScheme":"http","DownstreamHostAndPorts":[{"Host":"localhost","Port":5005}],"AuthenticationOptions":{"AuthenticationProviderKey":"Bearer","AllowedScopes":[]}},
+    {"SwaggerKey":"admin","UpstreamPathTemplate":"/gateway/admin/orders/{id}/status","UpstreamHttpMethod":["PUT"],"DownstreamPathTemplate":"/api/admin/orders/{id}/status","DownstreamScheme":"http","DownstreamHostAndPorts":[{"Host":"localhost","Port":5005}],"AuthenticationOptions":{"AuthenticationProviderKey":"Bearer","AllowedScopes":[]}},
+    {"SwaggerKey":"admin","UpstreamPathTemplate":"/gateway/admin/reports/sales","UpstreamHttpMethod":["GET"],"DownstreamPathTemplate":"/api/admin/reports/sales","DownstreamScheme":"http","DownstreamHostAndPorts":[{"Host":"localhost","Port":5005}],"AuthenticationOptions":{"AuthenticationProviderKey":"Bearer","AllowedScopes":[]}},
+    {"SwaggerKey":"admin","UpstreamPathTemplate":"/gateway/admin/reports/partners","UpstreamHttpMethod":["GET"],"DownstreamPathTemplate":"/api/admin/reports/partners","DownstreamScheme":"http","DownstreamHostAndPorts":[{"Host":"localhost","Port":5005}],"AuthenticationOptions":{"AuthenticationProviderKey":"Bearer","AllowedScopes":[]}}
+  ],
+  "SwaggerEndPoints": [
+    {
+      "Key": "auth",
+      "Config": [
+        {
+          "Name": "Auth Service",
+          "Version": "v1",
+          "Url": "http://localhost:5001/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "catalog",
+      "Config": [
+        {
+          "Name": "Catalog Service",
+          "Version": "v1",
+          "Url": "http://localhost:5002/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "orders",
+      "Config": [
+        {
+          "Name": "Order Service",
+          "Version": "v1",
+          "Url": "http://localhost:5003/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "admin",
+      "Config": [
+        {
+          "Name": "Admin Service",
+          "Version": "v1",
+          "Url": "http://localhost:5005/swagger/v1/swagger.json"
+        }
+      ]
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:5000"
+  }
+}
