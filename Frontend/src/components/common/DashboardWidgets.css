@@ -1,0 +1,412 @@
+/* =======================================================
+   DASHBOARD WIDGETS — Shared Component Styles
+   ======================================================= */
+
+/* ── Sparkline ── */
+.sparkline { display: block; overflow: visible; }
+
+/* ── Donut Chart ── */
+.donut-chart-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.donut-center {
+  position: absolute;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center;
+  pointer-events: none;
+}
+.donut-label {
+  font-family: var(--font-display);
+  font-size: 1.25rem; font-weight: 800;
+  color: var(--on-surface); line-height: 1.1;
+}
+.donut-sublabel {
+  font-size: 0.6875rem; font-weight: 600;
+  color: var(--on-surface-variant);
+  text-transform: uppercase; letter-spacing: 0.06em;
+}
+
+/* ── Trend Badge ── */
+.trend-badge {
+  display: inline-flex; align-items: center; gap: 3px;
+  padding: 2px 7px;
+  font-size: 0.6875rem; font-weight: 700;
+  border-radius: var(--rounded-full);
+  white-space: nowrap;
+}
+.trend-badge.positive {
+  background: var(--success-container);
+  color: var(--success);
+}
+.trend-badge.negative {
+  background: var(--error-container);
+  color: var(--error);
+}
+.trend-badge.neutral {
+  background: var(--surface-container);
+  color: var(--on-surface-variant);
+}
+
+/* ── Stat Card ── */
+.dash-stat-card {
+  background: var(--surface-container-lowest);
+  border: 1.5px solid var(--outline-variant);
+  border-radius: var(--rounded-2xl);
+  padding: var(--space-lg);
+  display: flex; flex-direction: column; gap: 0.5rem;
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-xs);
+  position: relative;
+  overflow: hidden;
+}
+.dash-stat-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: var(--outline-variant);
+  transition: background var(--transition-base);
+}
+.dash-stat-card.clickable { cursor: pointer; }
+.dash-stat-card.clickable:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-3px);
+  border-color: transparent;
+}
+.dash-stat-card.clickable:hover::before {
+  background: linear-gradient(90deg, var(--primary-container), var(--primary));
+}
+
+/* Accent top borders */
+.dash-stat-accent-primary::before { background: linear-gradient(90deg, var(--primary-container), var(--primary)); }
+.dash-stat-accent-secondary::before { background: linear-gradient(90deg, var(--secondary-container), var(--secondary)); }
+.dash-stat-accent-tertiary::before { background: linear-gradient(90deg, var(--tertiary-container), var(--tertiary)); }
+.dash-stat-accent-success::before { background: linear-gradient(90deg, #43a047, #2e7d32); }
+.dash-stat-accent-warning::before { background: linear-gradient(90deg, #ffb74d, #e65100); }
+.dash-stat-accent-error::before { background: linear-gradient(90deg, #ef5350, #c0392b); }
+
+.dsc-top {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  margin-bottom: 0.25rem;
+}
+.dsc-icon {
+  width: 44px; height: 44px;
+  border-radius: var(--rounded-xl);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.dsc-value {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 800;
+  color: var(--on-surface);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+.dsc-bottom {
+  display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;
+}
+.dsc-label {
+  font-size: 0.8125rem; font-weight: 600;
+  color: var(--on-surface-variant);
+}
+.dsc-sublabel {
+  font-size: 0.75rem; color: var(--on-surface-variant);
+  margin: 0;
+}
+.dsc-badge {
+  display: inline-block;
+  font-size: 0.6875rem; font-weight: 700;
+  padding: 2px 8px;
+  border-radius: var(--rounded-full);
+  margin-top: 4px;
+  cursor: pointer;
+}
+
+/* ── Action Card ── */
+.dash-action-card {
+  background: var(--surface-container-lowest);
+  border: 1.5px solid var(--outline-variant);
+  border-radius: var(--rounded-2xl);
+  padding: var(--space-xl) var(--space-lg);
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  display: flex; flex-direction: column;
+  align-items: center; gap: 0.625rem;
+  box-shadow: var(--shadow-xs);
+  position: relative;
+  overflow: hidden;
+}
+.dash-action-card::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, var(--primary-fixed), transparent 60%);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+.dash-action-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-fixed-dim);
+}
+.dash-action-card:hover::after { opacity: 1; }
+
+.dac-icon-wrap {
+  position: relative; z-index: 1;
+  width: 56px; height: 56px;
+  border-radius: var(--rounded-xl);
+  display: flex; align-items: center; justify-content: center;
+  transition: transform var(--transition-base);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.10);
+}
+.dash-action-card:hover .dac-icon-wrap { transform: scale(1.1) rotate(-4deg); }
+
+.dac-badge {
+  position: absolute; top: -6px; right: -6px;
+  min-width: 18px; height: 18px;
+  padding: 0 4px;
+  font-size: 10px; font-weight: 800;
+  border-radius: var(--rounded-full);
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.dac-title {
+  position: relative; z-index: 1;
+  font-family: var(--font-display);
+  font-size: 0.9375rem; font-weight: 700;
+  color: var(--on-surface); margin: 0;
+}
+.dac-desc {
+  position: relative; z-index: 1;
+  font-size: 0.8125rem; color: var(--on-surface-variant);
+  margin: 0; line-height: 1.4;
+}
+
+/* ── Mini Bar Chart ── */
+.mini-bar-chart {
+  display: flex; align-items: flex-end; gap: 4px;
+  width: 100%;
+}
+.mbc-bar-wrap {
+  flex: 1; display: flex; flex-direction: column;
+  align-items: center; gap: 3px;
+  min-width: 0;
+}
+.mbc-bar {
+  width: 100%; border-radius: 3px 3px 0 0;
+  min-height: 3px;
+  animation: barGrow 0.6s var(--transition-slow) both;
+  animation-delay: var(--delay, 0ms);
+}
+@keyframes barGrow {
+  from { transform: scaleY(0); transform-origin: bottom; }
+  to   { transform: scaleY(1); transform-origin: bottom; }
+}
+.mbc-label {
+  font-size: 0.5625rem; color: var(--on-surface-variant);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  max-width: 100%; text-align: center;
+}
+
+/* ── Date Range Tabs ── */
+.date-range-tabs {
+  display: flex; align-items: center;
+  background: var(--surface-container);
+  border-radius: var(--rounded-full);
+  padding: 3px;
+  gap: 2px;
+  border: 1.5px solid var(--outline-variant);
+}
+.drt-btn {
+  padding: 5px 14px;
+  font-size: 0.8125rem; font-weight: 500;
+  color: var(--on-surface-variant);
+  border-radius: var(--rounded-full);
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+.drt-btn.active {
+  background: var(--surface-container-lowest);
+  color: var(--on-surface);
+  font-weight: 700;
+  box-shadow: var(--shadow-xs);
+}
+
+/* ── Section Header ── */
+.dash-section-header {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  margin-bottom: var(--space-lg); gap: var(--space-md);
+}
+.dash-section-title {
+  font-family: var(--font-display);
+  font-size: 1.125rem; font-weight: 800;
+  color: var(--on-surface); margin: 0;
+  letter-spacing: -0.01em;
+}
+.dash-section-sub {
+  font-size: 0.8125rem; color: var(--on-surface-variant);
+  margin: 3px 0 0;
+}
+
+/* ── Orders Table ── */
+.dash-table-wrap {
+  background: var(--surface-container-lowest);
+  border: 1.5px solid var(--outline-variant);
+  border-radius: var(--rounded-2xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-xs);
+}
+.dash-table {
+  width: 100%; border-collapse: collapse;
+}
+.dash-table thead {
+  background: var(--surface-container-low);
+  border-bottom: 2px solid var(--outline-variant);
+}
+.dash-table th {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-size: 0.6875rem; font-weight: 800;
+  color: var(--on-surface-variant);
+  text-transform: uppercase; letter-spacing: 0.07em;
+  white-space: nowrap;
+}
+.dash-table td {
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  color: var(--on-surface);
+  border-bottom: 1px solid var(--outline-variant);
+  vertical-align: middle;
+}
+.dash-table tbody tr:last-child td { border-bottom: none; }
+.dash-table tbody tr.clickable {
+  cursor: pointer;
+  transition: background var(--transition-fast);
+  animation: fadeSlideIn 0.3s var(--transition-slow) both;
+}
+.dash-table tbody tr.clickable:hover { background: var(--surface-container-low); }
+.dash-table-empty {
+  padding: var(--space-xl);
+  text-align: center;
+  color: var(--on-surface-variant);
+  font-size: 0.9375rem;
+  background: var(--surface-container-lowest);
+  border: 1.5px solid var(--outline-variant);
+  border-radius: var(--rounded-2xl);
+}
+
+/* ── Shared dashboard layout ── */
+.dash-page {
+  padding: var(--space-xl) 0 var(--space-3xl);
+  min-height: 100vh;
+  background: var(--surface-dim);
+}
+.dash-page-header {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  margin-bottom: var(--space-xl); gap: var(--space-lg); flex-wrap: wrap;
+}
+.dash-page-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 800; color: var(--on-surface);
+  letter-spacing: -0.02em; margin: 0;
+}
+.dash-page-sub {
+  font-size: 0.9375rem; color: var(--on-surface-variant);
+  margin: 4px 0 0;
+}
+.dash-page-actions {
+  display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;
+}
+
+.dash-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--space-lg);
+  margin-bottom: var(--space-xl);
+}
+
+.dash-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: var(--space-lg);
+}
+
+.dash-section {
+  margin-bottom: var(--space-xl);
+}
+
+/* ── Chart + table row ── */
+.dash-charts-row {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-xl);
+  align-items: start;
+}
+.dash-chart-card {
+  background: var(--surface-container-lowest);
+  border: 1.5px solid var(--outline-variant);
+  border-radius: var(--rounded-2xl);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-xs);
+}
+.dash-chart-title {
+  font-family: var(--font-display);
+  font-size: 0.9375rem; font-weight: 700;
+  color: var(--on-surface); margin-bottom: var(--space-lg);
+}
+.dash-donut-card {
+  background: var(--surface-container-lowest);
+  border: 1.5px solid var(--outline-variant);
+  border-radius: var(--rounded-2xl);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-xs);
+  display: flex; flex-direction: column; align-items: center; gap: var(--space-lg);
+}
+.dash-donut-legend {
+  width: 100%;
+  display: flex; flex-direction: column; gap: 6px;
+}
+.ddl-item {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 0.8125rem;
+}
+.ddl-dot {
+  width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0;
+}
+.ddl-label { flex: 1; color: var(--on-surface-variant); }
+.ddl-value { font-weight: 700; color: var(--on-surface); }
+
+@media (max-width: 900px) {
+  .dash-charts-row { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .dash-stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .dash-actions-grid { grid-template-columns: repeat(2, 1fr); }
+  .dash-page-header { flex-direction: column; }
+}
+@media (max-width: 480px) {
+  .dash-stats-grid { grid-template-columns: 1fr; }
+  .dash-actions-grid { grid-template-columns: 1fr; }
+}
+
+/* ── Shared refresh button (used across dashboards) ── */
+.odp-refresh-btn {
+  width: 36px; height: 36px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: var(--rounded-lg);
+  color: var(--on-surface-variant);
+  border: 1.5px solid var(--outline-variant);
+  background: var(--surface-container-lowest);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.odp-refresh-btn:hover { background: var(--surface-container); color: var(--primary); border-color: var(--primary-fixed-dim); }
+.odp-refresh-btn.spinning svg { animation: spin 0.7s linear infinite; }

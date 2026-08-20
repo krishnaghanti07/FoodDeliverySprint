@@ -1,0 +1,156 @@
+/* ═══════════════════════════════════════════════════════
+   SKELETON LOADING COMPONENTS
+   ═══════════════════════════════════════════════════════ */
+
+/* ── Base Skeleton (extends global .skeleton from index.css) ── */
+.skeleton-circle {
+  border-radius: 50%;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ── Restaurant Card Skeleton ── */
+.restaurant-card-skeleton {
+  overflow: hidden;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.restaurant-card-skeleton.promoted {
+  border: 2px solid var(--primary-fixed-dim);
+}
+
+/* ── Menu Item Skeleton ── */
+.menu-item-skeleton {
+  display: flex;
+  gap: var(--space-lg);
+  padding: var(--space-lg);
+  background: var(--surface-container-low);
+  border-radius: var(--rounded-lg);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.mi-skeleton-info {
+  flex: 1;
+}
+
+.mi-skeleton-action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+/* ── Stat Card Skeleton ── */
+.stat-card-skeleton {
+  padding: var(--space-lg);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* ── Order Card Skeleton ── */
+.order-card-skeleton {
+  padding: var(--space-lg);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* ── Table Row Skeleton ── */
+.table-row-skeleton td {
+  padding: var(--space-md);
+}
+
+/* ── Cart Item Skeleton ── */
+.cart-item-skeleton {
+  display: flex;
+  gap: var(--space-md);
+  padding: var(--space-lg);
+  background: var(--surface-container-low);
+  border-radius: var(--rounded-lg);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* ── Hero Banner Skeleton ── */
+.hero-banner-skeleton {
+  background: linear-gradient(135deg, var(--primary-fixed) 0%, var(--secondary-fixed) 100%);
+  border-radius: var(--rounded-xl);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* ── Address Card Skeleton ── */
+.address-card-skeleton {
+  padding: var(--space-lg);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* ── Transaction Item Skeleton ── */
+.transaction-item-skeleton {
+  display: flex;
+  gap: var(--space-md);
+  padding: var(--space-md) 0;
+  border-bottom: 1px solid var(--outline-variant);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.transaction-item-skeleton:last-child {
+  border-bottom: none;
+}
+
+/* ── Profile Section Skeleton ── */
+.profile-section-skeleton {
+  padding: var(--space-xl);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* ── Cuisine Card Skeleton ── */
+.cuisine-card-skeleton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-lg);
+  background: var(--surface-container-low);
+  border-radius: var(--rounded-xl);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* ── Staggered Animation ── */
+.skeleton-stagger > * {
+  animation: fadeSlideIn 0.4s ease-out backwards;
+}
+
+.skeleton-stagger > *:nth-child(1) { animation-delay: 0s; }
+.skeleton-stagger > *:nth-child(2) { animation-delay: 0.05s; }
+.skeleton-stagger > *:nth-child(3) { animation-delay: 0.1s; }
+.skeleton-stagger > *:nth-child(4) { animation-delay: 0.15s; }
+.skeleton-stagger > *:nth-child(5) { animation-delay: 0.2s; }
+.skeleton-stagger > *:nth-child(6) { animation-delay: 0.25s; }
+.skeleton-stagger > *:nth-child(7) { animation-delay: 0.3s; }
+.skeleton-stagger > *:nth-child(8) { animation-delay: 0.35s; }
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .menu-item-skeleton {
+    flex-direction: column;
+  }
+
+  .mi-skeleton-action {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .cart-item-skeleton {
+    flex-wrap: wrap;
+  }
+}

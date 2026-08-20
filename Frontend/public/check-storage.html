@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>localStorage Checker</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 20px;
+            margin: 0;
+        }
+        h1 {
+            color: #4ec9b0;
+        }
+        .status {
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+        .success {
+            background: #1e3a1e;
+            border: 2px solid #4ec9b0;
+            color: #4ec9b0;
+        }
+        .error {
+            background: #3a1e1e;
+            border: 2px solid #f48771;
+            color: #f48771;
+        }
+        .data {
+            background: #252526;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+        button {
+            background: #0e639c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px 5px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        button:hover {
+            background: #1177bb;
+        }
+    </style>
+</head>
+<body>
+    <h1>FoodRush localStorage Checker</h1>
+    
+    <div>
+        <button onclick="checkStorage()">Refresh Check</button>
+        <button onclick="clearAll()">Clear All</button>
+        <button onclick="window.location.href='/login'">Go to Login</button>
+    </div>
+    
+    <div id="status"></div>
+    <div id="details"></div>
+
+    <script>
+        function checkStorage() {
+            const token = localStorage.getItem('foodrush_access_token');
+            const user = localStorage.getItem('foodrush_user_data');
+            const refresh = localStorage.getItem('foodrush_refresh_token');
+            
+            const statusDiv = document.getElementById('status');
+            const detailsDiv = document.getElementById('details');
+            
+            if (token && user && refresh) {
+                statusDiv.innerHTML = '<div class="status success">✅ ALL AUTH DATA PRESENT</div>';
+                
+                let userData = null;
+                try {
+                    userData = JSON.parse(user);
+                } catch (e) {
+                    userData = { error: 'Failed to parse' };
+                }
+                
+                detailsDiv.innerHTML = `
+                    <h2>Token:</h2>
+                    <div class="data">${token.substring(0, 100)}...</div>
+                    
+                    <h2>User Data:</h2>
+                    <div class="data">${JSON.stringify(userData, null, 2)}</div>
+                    
+                    <h2>Refresh Token:</h2>
+                    <div class="data">${refresh.substring(0, 50)}...</div>
+                `;
+            } else {
+                statusDiv.innerHTML = '<div class="status error">❌ AUTH DATA MISSING</div>';
+                detailsDiv.innerHTML = `
+                    <h2>Missing Items:</h2>
+                    <div class="data">
+Token: ${token ? '✅ Present' : '❌ Missing'}
+User: ${user ? '✅ Present' : '❌ Missing'}
+Refresh: ${refresh ? '✅ Present' : '❌ Missing'}
+                    </div>
+                `;
+            }
+        }
+        
+        function clearAll() {
+            if (confirm('Clear all localStorage?')) {
+                localStorage.clear();
+                checkStorage();
+            }
+        }
+        
+        // Auto-refresh every 2 seconds
+        setInterval(checkStorage, 2000);
+        
+        // Initial check
+        checkStorage();
+    </script>
+</body>
+</html>

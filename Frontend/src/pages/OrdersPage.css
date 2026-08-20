@@ -1,0 +1,12 @@
+.orders-page { padding: var(--space-xl) 0 var(--space-2xl); }
+.op-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-xl); }
+.op-list { display: flex; flex-direction: column; gap: var(--space-md); }
+.order-card { text-decoration: none; color: inherit; }
+.oc-content { display: flex; align-items: center; justify-content: space-between; gap: var(--space-md); }
+.oc-left { display: flex; align-items: center; gap: var(--space-md); }
+.oc-icon { width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; background: var(--primary-fixed); color: var(--primary); border-radius: var(--rounded-lg); flex-shrink: 0; }
+.oc-right { display: flex; align-items: center; gap: var(--space-sm); }
+.op-empty { text-align: center; padding: var(--space-2xl) 0; }
+.op-empty-icon { font-size: 64px; display: block; margin-bottom: var(--space-md); }
+.op-empty .btn { margin-top: var(--space-lg); }
+@media (max-width: 600px) { .oc-content { flex-direction: column; align-items: stretch; } .oc-right { justify-content: space-between; } }

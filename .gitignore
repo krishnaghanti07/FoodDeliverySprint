@@ -361,3 +361,10 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# Repository-specific files and directories
+.kiro/
+.github/
+.vs/
+.vscode/
+.gitattributes

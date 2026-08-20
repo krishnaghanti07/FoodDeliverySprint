@@ -1,0 +1,141 @@
+.orders-management {
+  padding: var(--space-xl) 0;
+  min-height: 100vh;
+}
+
+.orders-section {
+  margin-bottom: var(--space-xxl);
+}
+
+.orders-section h2 {
+  margin-bottom: var(--space-lg);
+}
+
+.orders-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: var(--space-lg);
+}
+
+.order-card {
+  background: var(--surface-container);
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  transition: all 0.2s;
+}
+
+.order-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary);
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--outline-variant);
+}
+
+.order-header h3 {
+  margin: 0 0 4px 0;
+}
+
+.order-details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.detail-row .label {
+  color: var(--on-surface-variant);
+  font-size: 0.875rem;
+}
+
+.detail-row .value {
+  font-weight: 500;
+  color: var(--on-surface);
+}
+
+.detail-row .price {
+  color: var(--primary);
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.order-actions {
+  display: flex;
+  gap: var(--space-sm);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--outline-variant);
+}
+
+.order-actions button {
+  flex: 1;
+}
+
+.orders-table {
+  background: var(--surface-container);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--outline-variant);
+}
+
+.orders-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.orders-table thead {
+  background: var(--surface-container-high);
+}
+
+.orders-table th {
+  padding: var(--space-md);
+  text-align: left;
+  font-weight: 600;
+  color: var(--on-surface-variant);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.orders-table td {
+  padding: var(--space-md);
+  border-top: 1px solid var(--outline-variant);
+}
+
+.orders-table tbody tr {
+  transition: background 0.2s;
+}
+
+.orders-table tbody tr:hover {
+  background: var(--surface-container-highest);
+}
+
+@media (max-width: 768px) {
+  .orders-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .order-actions {
+    flex-direction: column;
+  }
+
+  .orders-table {
+    overflow-x: auto;
+  }
+
+  .orders-table table {
+    min-width: 700px;
+  }
+}

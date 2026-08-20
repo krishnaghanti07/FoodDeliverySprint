@@ -1,0 +1,289 @@
+/* =======================================================
+   WALLET PAGE — Premium v3
+   ======================================================= */
+.wlt-page {
+  padding: var(--space-xl) 0 var(--space-3xl);
+  min-height: 80vh;
+}
+.wlt-container {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+/* ── Balance Card ── */
+.wlt-balance-card {
+  position: relative;
+  background: linear-gradient(135deg, var(--primary-container) 0%, var(--primary) 60%, #a33800 100%);
+  border-radius: var(--rounded-2xl);
+  padding: var(--space-xl);
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(201,74,0,0.35);
+}
+
+/* Decorative circles */
+.wlt-balance-deco { position: absolute; inset: 0; pointer-events: none; }
+.wlt-deco-circle {
+  position: absolute; border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+}
+.wlt-deco-1 { width: 220px; height: 220px; top: -80px; right: -60px; }
+.wlt-deco-2 { width: 140px; height: 140px; bottom: -50px; left: -30px; }
+
+.wlt-balance-content {
+  position: relative; z-index: 1;
+  display: flex; align-items: flex-start; justify-content: space-between;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+.wlt-balance-left {
+  display: flex; flex-direction: column; gap: 4px;
+}
+.wlt-balance-label {
+  font-size: 0.8125rem; font-weight: 600;
+  color: rgba(255,255,255,0.75);
+  text-transform: uppercase; letter-spacing: 0.06em;
+}
+.wlt-balance-amount {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 6vw, 2.75rem);
+  font-weight: 800;
+  color: white;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+.wlt-balance-sub {
+  font-size: 0.8125rem; color: rgba(255,255,255,0.65);
+}
+.wlt-balance-icon {
+  position: relative; z-index: 1;
+  width: 64px; height: 64px;
+  border-radius: var(--rounded-xl);
+  background: rgba(255,255,255,0.15);
+  border: 1.5px solid rgba(255,255,255,0.25);
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(255,255,255,0.9);
+  flex-shrink: 0;
+  backdrop-filter: blur(8px);
+}
+
+/* Mini stats row */
+.wlt-balance-stats {
+  position: relative; z-index: 1;
+  display: flex; align-items: center;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: var(--rounded-xl);
+  padding: 0.625rem 1rem;
+  backdrop-filter: blur(8px);
+}
+.wlt-bs-item {
+  flex: 1; display: flex; align-items: center; gap: 6px;
+  font-size: 0.875rem; font-weight: 700; color: white;
+  flex-wrap: wrap;
+}
+.wlt-bs-label {
+  font-size: 0.6875rem; font-weight: 500;
+  color: rgba(255,255,255,0.65);
+  width: 100%;
+}
+.wlt-bs-divider {
+  width: 1px; height: 32px;
+  background: rgba(255,255,255,0.25);
+  margin: 0 1rem;
+  flex-shrink: 0;
+}
+
+/* Balance skeleton */
+.wlt-balance-skeleton {
+  background: linear-gradient(135deg, var(--primary-fixed), var(--primary-fixed-dim));
+  border-radius: var(--rounded-2xl);
+  padding: var(--space-xl);
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: var(--space-lg);
+}
+
+/* ── History Card ── */
+.wlt-history-card {
+  background: var(--surface-container-lowest);
+  border: 1.5px solid var(--outline-variant);
+  border-radius: var(--rounded-2xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.wlt-history-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: var(--space-lg) var(--space-xl);
+  border-bottom: 1px solid var(--outline-variant);
+  background: var(--surface-container-low);
+  gap: var(--space-md);
+}
+.wlt-history-title-wrap {
+  display: flex; align-items: center; gap: 0.5rem;
+  color: var(--on-surface);
+}
+.wlt-history-title {
+  font-family: var(--font-display);
+  font-size: 1rem; font-weight: 700;
+  color: var(--on-surface); margin: 0;
+}
+.wlt-history-count {
+  font-size: 0.75rem; font-weight: 700;
+  background: var(--primary-fixed);
+  color: var(--primary);
+  padding: 2px 8px;
+  border-radius: var(--rounded-full);
+  border: 1px solid var(--primary-fixed-dim);
+}
+
+.wlt-refresh-btn {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 6px 12px;
+  font-size: 0.8125rem; font-weight: 600;
+  color: var(--primary);
+  background: var(--primary-fixed);
+  border: 1.5px solid var(--primary-fixed-dim);
+  border-radius: var(--rounded-full);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.wlt-refresh-btn:hover:not(:disabled) {
+  background: var(--primary-container);
+  color: white;
+  border-color: var(--primary-container);
+}
+.wlt-refresh-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+.wlt-refresh-btn.spinning svg { animation: spin 0.7s linear infinite; }
+.spinning-icon { animation: spin 0.7s linear infinite; }
+
+/* Sync banner */
+.wlt-sync-banner {
+  display: flex; align-items: center; gap: 8px;
+  padding: 0.625rem var(--space-xl);
+  background: var(--primary-fixed);
+  color: var(--primary);
+  font-size: 0.8125rem; font-weight: 600;
+  border-bottom: 1px solid var(--primary-fixed-dim);
+}
+
+/* ── Transaction List ── */
+.wlt-tx-list {
+  padding: var(--space-md) var(--space-xl);
+}
+
+/* Transaction Row */
+.wlt-tx-row {
+  display: flex; align-items: flex-start; gap: 0.875rem;
+  padding: 0.875rem 0;
+  border-bottom: 1px solid var(--outline-variant);
+  position: relative;
+  animation: fadeSlideIn 0.3s var(--transition-slow) both;
+}
+.wlt-tx-row.last { border-bottom: none; }
+
+/* Timeline column */
+.wlt-tx-timeline {
+  display: flex; flex-direction: column; align-items: center;
+  flex-shrink: 0; width: 20px;
+  padding-top: 2px;
+}
+.wlt-tx-dot {
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; z-index: 1;
+}
+.wlt-tx-dot.credit {
+  background: var(--success-container);
+  color: var(--success);
+  border: 1.5px solid rgba(46,125,50,0.3);
+}
+.wlt-tx-dot.debit {
+  background: var(--error-container);
+  color: var(--error);
+  border: 1.5px solid rgba(192,57,43,0.3);
+}
+.wlt-tx-line {
+  width: 1.5px; flex: 1; min-height: 16px;
+  background: var(--outline-variant);
+  margin-top: 3px;
+}
+
+/* Source icon */
+.wlt-tx-icon {
+  width: 36px; height: 36px;
+  border-radius: var(--rounded-lg);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Info */
+.wlt-tx-info {
+  flex: 1; min-width: 0;
+  display: flex; flex-direction: column; gap: 3px;
+}
+.wlt-tx-desc {
+  font-size: 0.9375rem; font-weight: 600;
+  color: var(--on-surface);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.wlt-tx-meta {
+  display: flex; align-items: center; gap: 5px;
+  font-size: 0.75rem; color: var(--on-surface-variant);
+  flex-wrap: wrap;
+}
+.wlt-tx-source {
+  font-weight: 600;
+  background: var(--surface-container);
+  padding: 1px 6px;
+  border-radius: var(--rounded-full);
+  border: 1px solid var(--outline-variant);
+}
+.wlt-tx-sep { opacity: 0.5; }
+.wlt-tx-date { color: var(--outline); }
+
+/* Amount */
+.wlt-tx-amount {
+  font-family: var(--font-display);
+  font-size: 1rem; font-weight: 800;
+  flex-shrink: 0;
+  letter-spacing: -0.01em;
+}
+.wlt-tx-amount.credit { color: var(--success); }
+.wlt-tx-amount.debit  { color: var(--error); }
+
+/* ── Empty state ── */
+.wlt-empty {
+  display: flex; flex-direction: column; align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-2xl) var(--space-xl);
+  text-align: center;
+}
+.wlt-empty-icon {
+  width: 72px; height: 72px;
+  border-radius: 50%;
+  background: var(--surface-container);
+  color: var(--outline);
+  display: flex; align-items: center; justify-content: center;
+}
+.wlt-empty-title {
+  font-family: var(--font-display);
+  font-size: 1.125rem; font-weight: 700;
+  color: var(--on-surface); margin: 0;
+}
+.wlt-empty-sub {
+  font-size: 0.875rem; color: var(--on-surface-variant);
+  max-width: 320px; line-height: 1.6; margin: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  .wlt-balance-amount { font-size: 2rem; }
+  .wlt-tx-list { padding: var(--space-md); }
+  .wlt-history-header { padding: var(--space-md); }
+}

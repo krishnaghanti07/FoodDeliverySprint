@@ -1,0 +1,299 @@
+/* ═══════════════════════════════════════════════════════
+   CONTACT US PAGE
+   ═══════════════════════════════════════════════════════ */
+
+.cu-page { padding-bottom: var(--space-2xl); }
+
+/* ── Hero ── */
+.cu-hero {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--surface-container-low) 0%, var(--secondary-fixed) 100%);
+  padding: 72px 0 64px;
+  text-align: center;
+}
+
+.cu-hero-shapes { position: absolute; inset: 0; pointer-events: none; }
+.cu-shape {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.15;
+}
+.cu-shape-1 {
+  width: 380px; height: 380px;
+  background: var(--secondary-container);
+  top: -100px; right: -60px;
+}
+.cu-shape-2 {
+  width: 260px; height: 260px;
+  background: var(--primary-container);
+  bottom: -70px; left: -50px;
+}
+
+.cu-hero-content { position: relative; z-index: 1; }
+
+.cu-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 16px;
+  background: var(--secondary-fixed);
+  color: var(--secondary);
+  border: 1px solid var(--secondary-container);
+  border-radius: var(--rounded-full);
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+}
+
+.cu-hero-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 1rem;
+  color: var(--on-surface);
+}
+
+.cu-hero-sub {
+  color: var(--on-surface-variant);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* ── Body layout ── */
+.cu-body { padding-top: var(--space-xl); }
+
+.cu-layout {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: var(--space-xl);
+  align-items: start;
+}
+
+/* ── Info sidebar ── */
+.cu-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  position: sticky;
+  top: 88px;
+}
+
+.cu-info-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 18px;
+  background: var(--surface-container-lowest);
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--rounded-xl);
+  transition: box-shadow var(--transition-fast);
+}
+.cu-info-card:hover { box-shadow: var(--shadow-sm); }
+
+.cu-info-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--rounded-lg);
+  flex-shrink: 0;
+}
+
+.cu-info-label {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--on-surface-variant);
+  margin-bottom: 4px;
+}
+
+.cu-info-value {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--on-surface);
+  text-decoration: none;
+  display: block;
+}
+a.cu-info-value:hover { color: var(--primary); }
+
+.cu-info-note {
+  font-size: 12px;
+  color: var(--outline);
+  margin-top: 2px;
+}
+
+.cu-info-divider {
+  height: 1px;
+  background: var(--outline-variant);
+  margin: 4px 0;
+}
+
+.cu-info-section-title {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--on-surface-variant);
+}
+
+.cu-role-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cu-role-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: var(--surface-container);
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--rounded-lg);
+  color: var(--on-surface-variant);
+}
+
+.cu-role-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--on-surface);
+  margin-bottom: 2px;
+}
+
+.cu-role-email {
+  font-size: 12px;
+  color: var(--primary);
+  text-decoration: none;
+}
+.cu-role-email:hover { text-decoration: underline; }
+
+.cu-help-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 18px;
+  background: var(--primary-fixed);
+  color: var(--primary);
+  border: 1px solid var(--primary-fixed-dim);
+  border-radius: var(--rounded-xl);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  margin-top: 4px;
+}
+.cu-help-link:hover {
+  background: var(--primary-fixed-dim);
+  transform: translateY(-1px);
+}
+.cu-help-link svg:last-child { margin-left: auto; }
+
+/* ── Form ── */
+.cu-form-wrap {
+  background: var(--surface-container-lowest);
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--rounded-xl);
+  padding: var(--space-xl);
+}
+
+.cu-form-header { margin-bottom: var(--space-lg); }
+.cu-form-header h2 { margin-bottom: 4px; }
+
+.cu-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+}
+
+.cu-textarea {
+  resize: vertical;
+  min-height: 140px;
+  font-family: inherit;
+}
+
+.cu-char-count {
+  text-align: right;
+  font-size: 11px;
+  color: var(--outline);
+  margin-top: 4px;
+}
+.cu-char-warn { color: var(--error); }
+
+.cu-privacy-note {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--on-surface-variant);
+  margin-bottom: var(--space-md);
+}
+.cu-privacy-note a { color: var(--primary); }
+
+.cu-submit {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* ── Success state ── */
+.cu-success {
+  text-align: center;
+  padding: var(--space-2xl) var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.cu-success-icon { font-size: 64px; }
+
+.cu-success-actions {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: var(--space-sm);
+}
+
+/* ── FAQ teaser ── */
+.cu-faq-teaser {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-lg);
+  background: var(--surface-container);
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--rounded-xl);
+  padding: var(--space-xl);
+  margin-top: var(--space-2xl);
+  flex-wrap: wrap;
+}
+
+.cu-faq-teaser-text h3 { margin-bottom: 4px; }
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .cu-layout {
+    grid-template-columns: 1fr;
+  }
+  .cu-info {
+    position: static;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .cu-info-divider,
+  .cu-info-section-title,
+  .cu-role-cards,
+  .cu-help-link { grid-column: 1 / -1; }
+}
+
+@media (max-width: 600px) {
+  .cu-hero { padding: 48px 0 40px; }
+  .cu-info { grid-template-columns: 1fr; }
+  .cu-form-row { grid-template-columns: 1fr; }
+  .cu-form-wrap { padding: var(--space-lg); }
+  .cu-faq-teaser { flex-direction: column; align-items: flex-start; }
+}

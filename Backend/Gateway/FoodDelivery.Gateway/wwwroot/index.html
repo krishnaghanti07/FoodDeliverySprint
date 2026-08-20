@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Food Delivery API Gateway - Service Explorer</title>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: white;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .subtitle {
+            color: rgba(255,255,255,0.9);
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 1.1em;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+        .service-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+        .service-name {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .service-desc {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        .service-link {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.3s;
+        }
+        .service-link:hover {
+            opacity: 0.9;
+        }
+        .info-box {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-top: 30px;
+        }
+        .info-box h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        .info-box p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+        .info-box code {
+            background: #f5f5f5;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            color: #e83e8c;
+        }
+        .badge {
+            display: inline-block;
+            background: #28a745;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class='container'>
+        <h1>Food Delivery API Gateway</h1>
+        <p class='subtitle'>Select a service to explore its API documentation</p>
+        
+        <div class='services-grid'>
+            <div class='service-card' onclick='window.open("http://localhost:5001/swagger", "_blank")'>
+                <div class='service-icon'>🔐</div>
+                <div class='service-name'>Auth Service <span class='badge'>RUNNING</span></div>
+                <div class='service-desc'>
+                    Authentication, registration, OTP verification, and user management
+                </div>
+                <a href='http://localhost:5001/swagger' target='_blank' class='service-link'>
+                    Open Swagger
+                </a>
+            </div>
+            
+            <div class='service-card' onclick='window.open("http://localhost:5002/swagger", "_blank")'>
+                <div class='service-icon'>🍽️</div>
+                <div class='service-name'>Catalog Service <span class='badge'>RUNNING</span></div>
+                <div class='service-desc'>
+                    Restaurants, menu items, categories, and catalog management
+                </div>
+                <a href='http://localhost:5002/swagger' target='_blank' class='service-link'>
+                    Open Swagger
+                </a>
+            </div>
+            
+            <div class='service-card' onclick='window.open("http://localhost:5003/swagger", "_blank")'>
+                <div class='service-icon'>🛒</div>
+                <div class='service-name'>Order Service <span class='badge'>RUNNING</span></div>
+                <div class='service-desc'>
+                    Cart, orders, payments, deliveries, and order tracking
+                </div>
+                <a href='http://localhost:5003/swagger' target='_blank' class='service-link'>
+                    Open Swagger
+                </a>
+            </div>
+            
+            <div class='service-card' onclick='window.open("http://localhost:5004/swagger", "_blank")'>
+                <div class='service-icon'>💳</div>
+                <div class='service-name'>Payment Service <span class='badge'>RUNNING</span></div>
+                <div class='service-desc'>
+                    Payment processing, Razorpay integration, refunds, and transaction management
+                </div>
+                <a href='http://localhost:5004/swagger' target='_blank' class='service-link'>
+                    Open Swagger
+                </a>
+            </div>
+            
+            <div class='service-card' onclick='window.open("http://localhost:5005/swagger", "_blank")'>
+                <div class='service-icon'>👨‍💼</div>
+                <div class='service-name'>Admin Service <span class='badge'>RUNNING</span></div>
+                <div class='service-desc'>
+                    Dashboard, user management, reports, and admin operations
+                </div>
+                <a href='http://localhost:5005/swagger' target='_blank' class='service-link'>
+                    Open Swagger
+                </a>
+            </div>
+        </div>
+        
+        <div class='info-box'>
+            <h2>Quick Start Guide</h2>
+            <p><strong>1. Login as Admin:</strong></p>
+            <p>• Open Auth Service Swagger</p>
+            <p>• Use <code>POST /api/auth/login</code></p>
+            <p>• Email: <code>admin@fooddelivery.com</code> | Password: <code>Admin@1234</code></p>
+            
+            <p style='margin-top: 15px;'><strong>2. Authorize:</strong></p>
+            <p>• Copy the <code>accessToken</code> from login response</p>
+            <p>• Click <strong>Authorize</strong> button in any Swagger UI</p>
+            <p>• Enter: <code>Bearer {your-token}</code></p>
+            
+            <p style='margin-top: 15px;'><strong>3. Test Endpoints:</strong></p>
+            <p>• All protected endpoints are now accessible</p>
+            <p>• Gateway routes all requests through <code>http://localhost:5000/gateway/*</code></p>
+            <p>• Direct service access available for development</p>
+        </div>
+    </div>
+</body>
+</html>

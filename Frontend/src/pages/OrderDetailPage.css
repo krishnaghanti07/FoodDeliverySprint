@@ -1,0 +1,21 @@
+.od-page { padding: var(--space-xl) 0 var(--space-2xl); }
+.od-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-xl); flex-wrap: wrap; gap: 1rem; }
+.od-progress { display: flex; align-items: center; gap: 0; margin-bottom: var(--space-xl); overflow-x: auto; padding-bottom: 0.5rem; }
+.od-step { display: flex; flex-direction: column; align-items: center; gap: 0.375rem; flex: 1; position: relative; }
+.od-step::before { content: ''; position: absolute; top: 14px; left: -50%; right: 50%; height: 2px; background: var(--outline-variant); z-index: 0; }
+.od-step:first-child::before { display: none; }
+.od-step.completed::before { background: var(--primary-container); }
+.od-step-dot { width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: var(--surface-container); border: 2px solid var(--outline-variant); position: relative; z-index: 1; font-size: 12px; color: var(--outline); transition: all var(--transition-base); }
+.od-step.completed .od-step-dot { background: var(--primary-container); border-color: var(--primary-container); color: white; }
+.od-step.active .od-step-dot { background: var(--primary); border-color: var(--primary); color: white; animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100%{box-shadow:0 0 0 0 rgba(255,107,53,0.3)} 50%{box-shadow:0 0 0 8px rgba(255,107,53,0)} }
+.od-step-label { font-size: 11px; font-weight: 500; color: var(--outline); text-align: center; white-space: nowrap; }
+.od-step.completed .od-step-label { color: var(--primary); font-weight: 600; }
+.od-step.active .od-step-label { color: var(--on-surface); font-weight: 700; }
+.od-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-lg); }
+.od-item { display: flex; justify-content: space-between; padding: 0.625rem 0; border-bottom: 1px solid var(--outline-variant); font-size: 15px; }
+.od-item:last-child { border-bottom: none; }
+.od-item.total { border-top: 2px solid var(--on-surface); border-bottom: none; margin-top: 0.5rem; padding-top: 0.75rem; }
+.od-detail { display: flex; gap: 0.75rem; padding: 0.75rem 0; border-bottom: 1px solid var(--outline-variant); color: var(--on-surface-variant); }
+.od-detail:last-of-type { border-bottom: none; }
+@media (max-width: 768px) { .od-grid { grid-template-columns: 1fr; } .od-progress { gap: 0; } .od-step-label { font-size: 9px; } }

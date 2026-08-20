@@ -1,0 +1,26 @@
+.cart-page { padding: var(--space-xl) 0 var(--space-2xl); }
+.cart-empty { text-align: center; padding: var(--space-2xl) 0; }
+.cart-empty-icon { font-size: 80px; display: block; margin-bottom: var(--space-md); }
+.cart-empty h2 { margin-bottom: 0.5rem; }
+.cart-empty .btn { margin-top: var(--space-lg); }
+.cart-layout { display: grid; grid-template-columns: 1fr 380px; gap: var(--space-xl); align-items: start; }
+.cart-items-section { display: flex; flex-direction: column; gap: var(--space-md); }
+.cart-item { display: flex; align-items: center; justify-content: space-between; gap: var(--space-md); padding: var(--space-md) var(--space-lg); background: var(--surface-container-lowest); border: 1px solid var(--outline-variant); border-radius: var(--rounded-xl); transition: border-color var(--transition-fast); }
+.cart-item:hover { border-color: var(--primary-fixed-dim); }
+.ci-info h4 { font-size: 16px; margin-top: 0.25rem; }
+.ci-controls { display: flex; align-items: center; gap: var(--space-md); }
+.qty-control { display: flex; align-items: center; border: 1px solid var(--outline-variant); border-radius: var(--rounded); overflow: hidden; }
+.qty-btn { width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; color: var(--primary); transition: background var(--transition-fast); }
+.qty-btn:hover { background: var(--primary-fixed); }
+.qty-value { width: 32px; text-align: center; font-weight: 600; font-size: 14px; }
+.ci-total { font-weight: 700; font-size: 16px; min-width: 70px; text-align: right; }
+.ci-remove { padding: 0.375rem; color: var(--outline); border-radius: var(--rounded); transition: all var(--transition-fast); }
+.ci-remove:hover { color: var(--error); background: var(--error-container); }
+.cart-coupon { display: flex; align-items: center; gap: 0.75rem; padding: var(--space-md); background: var(--surface-container-low); border-radius: var(--rounded-lg); }
+.cart-coupon .form-input { flex: 1; min-height: 40px; padding: 0.5rem 0.75rem; }
+.summary-card { position: sticky; top: 84px; }
+.summary-row { display: flex; justify-content: space-between; padding: 0.5rem 0; font-size: 15px; }
+.summary-row.discount { color: var(--success); }
+.summary-row.total { font-weight: 700; font-size: 18px; }
+.summary-divider { height: 1px; background: var(--outline-variant); margin: 0.5rem 0; }
+@media (max-width: 768px) { .cart-layout { grid-template-columns: 1fr; } .cart-item { flex-direction: column; align-items: stretch; } .ci-controls { justify-content: space-between; } }
